@@ -8,7 +8,6 @@
   - [OpenMPTCP Router](Raspberry/OpenMPTCProuter.md)
   - [Pi-Hole](Raspberry/Pi-Hole.md)
   - [Revolver Tabs](Raspberry/RevolverTabs.md)
-  - [Toto](Raspberry/Toto.md)
 
 - Linux
 
