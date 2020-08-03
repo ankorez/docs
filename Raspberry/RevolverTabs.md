@@ -197,6 +197,6 @@ xtrlock
 ```
 ### Links pour l'affichage dynamique
 
-https://pisignage.com/
-https://xibo.org.uk/
-https://www.screenly.io/
+- https://pisignage.com/
+- https://xibo.org.uk/
+- https://www.screenly.io/
