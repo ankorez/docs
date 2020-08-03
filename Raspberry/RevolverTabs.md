@@ -195,3 +195,8 @@ xtrlock
 @chromium-browser --noerrors --disable-infobars --disable-session-crashed-bubble http://sce.party 
 @/home/pi/Documents/autologin.sh
 ```
+### Links pour l'affichage dynamique
+
+https://pisignage.com/
+https://xibo.org.uk/
+https://www.screenly.io/
