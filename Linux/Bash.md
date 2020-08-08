@@ -1,4 +1,5 @@
 # bash
+{docsify-updated}
 
 Coloration syntaxique On modifie le fichier de configuration Du bash pour avoir une coloration.
 
