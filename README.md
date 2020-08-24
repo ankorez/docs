@@ -10,4 +10,4 @@ Open Source Tool
 
  Jitsi for visio conferencing : https://jitsi.org/
 
- Password manager for manage password : https://www.passwordstore.org/  https://bitwarden.com/   https://bitwarden.com/
+ Password manager : https://www.passwordstore.org/  https://bitwarden.com/   https://bitwarden.com/
