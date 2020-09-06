@@ -43,5 +43,5 @@ adduser ankorez users
 ### Mount
  - fstab
 ```bash
- //ipduserveursamba/share1 /mnt/share1 cifs username=ankorez,password=******** 0 0
+//ipduserveursamba/share1 /mnt/share1 cifs username=ankorez,password=******** 0 0
 ```
