@@ -9,7 +9,7 @@ apt install samba
 ```bash
 nano /etc/samba/smb.conf
 ```
-Modifier ou ajouter ces lignes
+- Modifier ou ajouter ces lignes
 ```bash
    # Configuration
    server role = standalone server
