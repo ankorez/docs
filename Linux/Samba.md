@@ -35,10 +35,10 @@ Modifier ou ajouter ces lignes
 ```
 ### Create user
 ```bash
-adduser ankorez
-passwd ankorez
-usermod -aG sudo ankorez
-adduser ankorez users
+adduser ankorez #Créer l'utilisateur
+passwd ankorez  #Definir le password
+usermod -aG sudo ankorez  #Ajouter l'utilisateur sudo
+adduser ankorez users     #Ajouter l'utilisateur au groupe users qui sera aussi le groupe du share
 ```
 ### Mount
  - fstab
