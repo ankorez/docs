@@ -41,7 +41,11 @@ usermod -aG sudo ankorez  #Ajouter l'utilisateur sudo
 adduser ankorez users     #Ajouter l'utilisateur au groupe users qui sera aussi le groupe du share
 ```
 ### Mount
- - fstab
+- Pour tester
+```bash
+mount -t cifs -o username=ankorez,password=******,file_mode=0755,dir_mode=0755 //192.168.2.253/share1 /mnt/share1
+```
+- Puis ajouter dans fstab
 ```bash
 //ipduserveursamba/share1 /mnt/share1 cifs username=ankorez,password=******** 0 0
 ```
