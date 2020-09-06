@@ -18,6 +18,7 @@
   - [NCDU Search](Linux/NCDU.md)
   - [PHP Monitor](Linux/PHPServerMonitor.md)
   - [Proxmox](Linux/Proxmox.md)
+  - [Samba](Linux/Samba.md)
   - [Smashing](Linux/Smashing.md)
   - [SSHAgent](Linux/SSHAgent.md)
   - [TimeZoneDebian](Linux/TimeZoneDebian.md)
