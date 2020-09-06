@@ -1,15 +1,14 @@
 {docsify-updated}
-
-## Samba
+# Samba
 
 Configuration de Samba
 
-### Installation
+## Installation
 
 ```bash
 apt install samba
 ```
-### Configuration
+## Configuration
 
 ```bash
 nano /etc/samba/smb.conf
@@ -39,7 +38,7 @@ Modifier ou ajouter ces lignes
     write list = ankorez
 ```
 
-### Create user
+## Create user
 ```bash
 adduser ankorez
 passwd ankorez
@@ -47,7 +46,7 @@ usermod -aG sudo ankorez
 adduser ankorez users
 ```
 
-### Mount
+## Mount
  - fstab
 ```bash
  //ipduserveursamba/share1 /mnt/share1 cifs username=ankorez,password=******** 0 0
