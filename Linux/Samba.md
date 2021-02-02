@@ -39,6 +39,7 @@ adduser ankorez #Créer l'utilisateur
 passwd ankorez  #Definir le password
 usermod -aG sudo ankorez  #Ajouter l'utilisateur sudo
 adduser ankorez users     #Ajouter l'utilisateur au groupe users qui sera aussi le groupe du share
+smbpasswd -a ankorez      #Ajouter password smb
 ```
 ### Mount
 - Pour tester
