@@ -1,6 +1,10 @@
 ## Home Assistant avec Docker
 
-Bye Bye Proxmox. Welcome Docker. Je vais utiliser Home Assistant avec Docker sur un Raspberry Pi 3b+. Je ne vais pas utiliser Plex et Transmission dans Home Assistant mais je vais telecharger les images et les utiliser avec Docker.
+Bye Bye Proxmox. Welcome Docker. Je vais utiliser Home Assistant avec Docker sur un Raspberry Pi 3b+. Je vais ajouter les integrations suivantes : 
+
+HACS, Philips Hue, MyEnedis et surement d'autres.
+
+Ce Raspberry Pi 3b+ hebergera mon serveur Home Assistant ainsi que Plex et Transmission (qui seront deployés avec Docker et non directement dans Home Assistant car c'est un peu galere de monter un volume quand on les installes avec Home Assistant).
 
 **Prérequis :**
 
