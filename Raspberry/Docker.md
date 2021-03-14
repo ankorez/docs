@@ -14,9 +14,10 @@ Bye Bye Proxmox. Welcome Docker. Je vais utiliser Docker pour installer Home Ass
 - https://github.com/linuxserver/docker-plex/issues/247
 - https://hub.docker.com/r/linuxserver/transmission
 - https://www.lesalexiens.fr/tutoriels/tutoriel-hacs-une-integration-indispensable-dans-home-assistant/
-- [https://github.com/saniho/apiEnedis](https://github.com/saniho/apiEnedis)
-- [https://github.com/saniho/content-card-linky](https://github.com/saniho/content-card-linky)
-- [https://enedisgateway.tech](https://enedisgateway.tech/)
+- https://github.com/saniho/apiEnedis
+- https://github.com/saniho/content-card-linky
+- https://enedisgateway.tech/
+- https://docs.linuxserver.io/faq#libseccomp
 
 ## Steps
 - Installer Raspbian sur la carte micro SD
@@ -83,6 +84,15 @@ sudo docker start transmission
 - L'argument `-v /mnt/usb-drive:/downloads` permet de monter un disque USB connecté et monté sur le Host (le Raspberry) 
 - L'argument `/home/pi/transmission/config:/config` permet de sauvegarder la config du container et ainsi garder les settings lorsque je mettrai à jour l'image du container. J'ai créé des folders séparés dans le home de pi pour chaque container.
 - L'argument `-e PGID=1000 -e PUID=1000` correspond au user pi pour vérifier les valeurs on tape la commande `id pi` sur le RPi.
+- Si les torrents ne demarrent pas checker les logs avec `sudo docker logs -f transmission` si ce message s'affiche **Your DockerHost is most likely running an outdated version of libseccomp
+To fix this, please visit https://docs.linuxserver.io/faq#libseccomp
+Some apps might not behave correctly without this** 
+Il faut installer
+```  
+wget http://ftp.us.debian.org/debian/pool/main/libs/libseccomp/libseccomp2_2.4.4-1~bpo10+1_armhf.deb
+sudo dpkg -i libseccomp2_2.4.4-1~bpo10+1_armhf.deb
+```
+- Relancer transmission `sudo docker restart transmission`
 
 ### Installation HACS
 
