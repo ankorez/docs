@@ -1,5 +1,5 @@
 # Docker avec Home Assistant, Plex et Transmission
-{docsify-updated}
+14/03/2021
 v1.0
 
 Bye Bye Proxmox. Welcome Docker. Je vais utiliser Docker pour installer Home Assistant, Plex et Transmission sur mon Raspberry Pi 4. 
@@ -9,14 +9,14 @@ Bye Bye Proxmox. Welcome Docker. Je vais utiliser Docker pour installer Home Ass
 - 1 HDD ou SSD Externe
 
 *Sources*
-https://forum.hacf.fr/t/installer-home-assistant-sur-rpi-ou-autres-sbc-debian-methode-docker-supervisor/676
-https://hub.docker.com/r/linuxserver/plex/tags
-https://github.com/linuxserver/docker-plex/issues/247
-https://hub.docker.com/r/linuxserver/transmission
-https://www.lesalexiens.fr/tutoriels/tutoriel-hacs-une-integration-indispensable-dans-home-assistant/
-[https://github.com/saniho/apiEnedis](https://github.com/saniho/apiEnedis)
-[https://github.com/saniho/content-card-linky](https://github.com/saniho/content-card-linky)
-[https://enedisgateway.tech](https://enedisgateway.tech/)
+- https://forum.hacf.fr/t/installer-home-assistant-sur-rpi-ou-autres-sbc-debian-methode-docker-supervisor/676
+- https://hub.docker.com/r/linuxserver/plex/tags
+- https://github.com/linuxserver/docker-plex/issues/247
+- https://hub.docker.com/r/linuxserver/transmission
+- https://www.lesalexiens.fr/tutoriels/tutoriel-hacs-une-integration-indispensable-dans-home-assistant/
+- [https://github.com/saniho/apiEnedis](https://github.com/saniho/apiEnedis)
+- [https://github.com/saniho/content-card-linky](https://github.com/saniho/content-card-linky)
+- [https://enedisgateway.tech](https://enedisgateway.tech/)
 
 ## Steps
 - Installer Raspbian sur la carte micro SD
@@ -107,7 +107,7 @@ sudo docker start transmission
 - Une fois que le serveur est redémarré on se rend sur l'accueil et on ajoute une carte manuelle et on ajoute ça : (il faut modifier la fin de la ligne **sensor.myenedis** avec notre numero de point de livraison Linky).
 ```
 type: 'custom:content-card-linky'
-entity: sensor.myenedis_**numeropointdelivraison**
+entity: sensor.myenedis_numeropointdelivraison
 showIcon: true
 showHistory: true
 showPeakOffPeak: true
