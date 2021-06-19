@@ -143,3 +143,6 @@ docker exec -it idducontainerhomeassistant python -c 'import roombapy.entry_poin
 - Retirer les images locales `sudo docker images`et `sudo docker rmi numerocontainer`
 - Dossier config pour garder les settings lors de la mise à jour du container (il faut évidemment que le dossier existe sur le machine host).  `-v /home/pi/plex/config:/config`
 - Lister les containers `sudo docker ps -a`
+
+### Lenteurs sur le HDD/SSD
+ https://www.raspberrypi.org/forums/viewtopic.php?t=245931
