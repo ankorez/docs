@@ -1,5 +1,4 @@
 # bash
-{docsify-updated}
 
 Coloration syntaxique On modifie le fichier de configuration Du bash pour avoir une coloration.
 
@@ -21,7 +20,7 @@ On va maintenant remplacer le fichier Du répertoire root par celui-ci pour que 
 
 ```bash
 su
-cp /home/manomano/.bashrc ~/.bashrc
+cp /home/ankorez/.bashrc ~/.bashrc
 ```
 
 On resource la config
