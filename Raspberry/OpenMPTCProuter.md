@@ -133,3 +133,8 @@ reboot
 #### Utilisation
 
 - Menu > Système > OpenMPTCProuter > Etat
+
+#### Wifi Issues
+
+- Je ne sais pas pourquoi mais le wifi de mon raspberry pi 3 b+ de façon aleatoire n'arrive pas à se reconnecter à mon partage de connexion 4G sur mon telephone Google Pixel 3
+- Lorsque le probleme se presente il faut aller sur Réseau > Sans-fil > Edit sur l'interface wifi > passer de AC à N ou bien de N à AC puis enregistrer
