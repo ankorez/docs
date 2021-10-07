@@ -1,6 +1,6 @@
 # ankorez
 
-![](https://komarev.com/ghpvc/?username=ankorez&color=green)
+![Visitor Count](https://profile-counter.glitch.me/ankorez/count.svg)
 
 > Here is my documentation.
 
