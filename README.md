@@ -1,6 +1,7 @@
 # ankorez
 
-![Visitor Count](https://profile-counter.glitch.me/ankorez/count.svg)
+![visitors](https://visitor-badge.glitch.me/badge?page_id=page.id&left_color=green&right_color=red)
+                
 
 > Here is my documentation.
 
