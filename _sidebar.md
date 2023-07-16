@@ -16,7 +16,7 @@
   - [BIND9](Linux/BIND9.md)
   - [Dashkiosk](Linux/Dashkiosk.md)
   - [DebianPXE](Linux/DebianPXE.md)
-  - [GithubPagesDNS](Linux/GithubPagesDNS.md)
+  - [DNSGithubPages](Linux/GithubPagesDNS.md)
   - [NCDU Search](Linux/NCDU.md)
   - [PHP Monitor](Linux/PHPServerMonitor.md)
   - [Proxmox](Linux/Proxmox.md)
