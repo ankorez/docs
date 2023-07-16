@@ -36,24 +36,9 @@ User root is admin, and the password is encrypted. To encrypt the password, type
 Passphrase is visible in preseed...
 
 1. Preseed YAML Ubuntu Desktop with LVM encryption and Apps
-   user-data
-    #cloud-config
-    autoinstall:
-      apt:
-        preserve_sources_list: false
-        primary:
-          - arches: [amd64]
-            uri: "http://archive.ubuntu.com/ubuntu"
-          - arches: [default]
-            uri: "http://ports.ubuntu.com/ubuntu-ports"
-        geoip: true
-        sources:
-          docker:
-            source: "deb [arch=amd64] https://download.docker.com/linux/ubuntu jammy stable"
-            key: |
-              -----BEGIN PGP PUBLIC KEY BLOCK-----
-              ...insertPGPKey here...
-              -----END PGP PUBLIC KEY BLOCK-----
+   
+file: user-data
+
     ```yaml
     #cloud-config
     autoinstall:
