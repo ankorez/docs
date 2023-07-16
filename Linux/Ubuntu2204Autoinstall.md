@@ -131,7 +131,7 @@ file: user-data
         - id: client_encrypted
         - type: dm_crypt
         - preserve: false
-        - key: '52750172013'
+        - key: '12345678'
         - volume: pv
     
         - id: volumegroup
