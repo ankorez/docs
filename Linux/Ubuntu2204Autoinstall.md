@@ -223,5 +223,74 @@ Passphrase is visible in preseed...
     ## Version: 1
 
 
-test
+### 2. PXE Menu Entry
+
+    :ubuntu-2204 
+    kernel ${boot-url}/ubuntu/vmlinuz
+    initrd ${boot-url}/ubuntu/initrd
+    imgargs vmlinuz initrd=initrd ip=dhcp cloud-config-url=/dev/null url=${boot-url}/iso/ubuntu-22.04-live-server-amd64.iso boot
+
+### 3. Custom-startup.sh
+    This script is to install some applications/stuff not deployable during the master
+
+    #!/bin/bash
+    
+    ## VPN profil
+    nmcli connection import type openvpn file /etc/openvpn/client/ManoMano.ovpn
+    
+    # Wallpaper
+    wget -O /tmp/manomano.png http://10.65.2.108/sources/wallpaper/manomano.png
+    sudo mv /usr/share/backgrounds/warty-final-ubuntu.png /usr/share/backgrounds/warty-final-ubuntu-old.png
+    sudo cp /tmp/manomano.png /usr/share/backgrounds/warty-final-ubuntu.png
+    
+    # Install Desktop Central Agent
+    wget -O DesktopCentral_LinuxAgent.bin http://10.65.2.108/sources/dcagent/DesktopCentral_LinuxAgent.bin
+    wget -O serverinfo.json http://10.65.2.108/sources/dcagent/serverinfo.json
+    sudo chmod +x DesktopCentral_LinuxAgent.bin
+    sudo ./DesktopCentral_LinuxAgent.bin
+    
+    # Install Slack
+    wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.13.0-amd64.deb
+    sudo apt install ./slack-desktop-*.deb
+    
+    # Zoom-client
+    wget https://zoom.us/client/latest/zoom_amd64.deb
+    sudo apt install -y ./zoom_amd64.deb
+    
+    # Installation Keeper
+    sudo wget -O keeperpasswordmanager.deb http://10.65.2.108/sources/keeper/keeperpasswordmanager_16.7.1_amd64.deb
+    sudo chmod +x keeperpasswordmanager.deb
+    sudo dpkg -i keeperpasswordmanager.deb
+    
+    # Install Display Link
+    wget -O /tmp/displaylink.run http://10.65.2.108/sources/displaylink/displaylink-driver-5.6.0-59.176.run
+    sudo chmod +x /tmp/displaylink.run
+    sudo sh /tmp/displaylink.run
+
+# Rename Computer
+    OLD_HOSTNAME=$(hostname)
+    MY_HOSTNAME="ML-$(dmidecode -s system-serial-number | cut -d'-' -f2- | tr -d ' ')"
+    sudo sed -i "s/$OLD_HOSTNAME/$MY_HOSTNAME/g" /etc/hosts
+    sudo hostnamectl set-hostname $MY_HOSTNAME
+    echo $MY_HOSTNAME
+
+## Remove custom startup
+    sudo rm zoom_amd64.deb
+    sudo rm slack-desktop-*.deb
+    rm keeperpasswordmanager.deb
+    rm DesktopCentral_LinuxAgent.bin
+    rm serverinfo.json
+    systemctl disable custom-startup
+    rm /etc/systemd/system/custom-startup.service
+    rm /root/custom-startup.sh
+### 4. Custom-startup.service
+    [Unit]
+    Description=Custom Startup
+    
+    [Service]
+    ExecStartPre=/bin/sleep 15
+    ExecStart=/root/custom-startup.sh
+    
+    [Install]
+    WantedBy=multi-user.target
 
