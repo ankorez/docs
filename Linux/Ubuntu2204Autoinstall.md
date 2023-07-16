@@ -221,3 +221,11 @@ autoinstall:
   - reboot
 
 ## Version: 1
+
+### Tiny PXE Menu Entry
+```bash
+:ubuntu-2204
+kernel ${boot-url}/ubuntu/vmlinuz
+initrd ${boot-url}/ubuntu/initrd
+imgargs vmlinuz initrd=initrd ip=dhcp cloud-config-url=/dev/null url=${boot-url}/iso/ubuntu-22.04-live-server-amd64.iso
+boot
