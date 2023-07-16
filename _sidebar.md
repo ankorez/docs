@@ -26,6 +26,7 @@
   - [SSHAgent](Linux/SSHAgent.md)
   - [TimeZoneDebian](Linux/TimeZoneDebian.md)
   - [Transmission](Linux/Transmission.md)
+  - [Ubuntu2204Autoinstall](Linux/Ubuntu2204Autoinstall.md)
   - [YunoHost](Linux/YunoHost.md)
     
 
