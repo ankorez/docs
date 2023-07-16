@@ -20,7 +20,6 @@
   - [NCDU Search](Linux/NCDU.md)
   - [PHP Monitor](Linux/PHPServerMonitor.md)
   - [Proxmox](Linux/Proxmox.md)
-  - [ProxmoxInstallation](Linux/ProxmoxInstallation.md)
   - [RAID mdadm](Linux/RAIDmdadm.md)
   - [Samba](Linux/Samba.md)
   - [Smashing](Linux/Smashing.md)
