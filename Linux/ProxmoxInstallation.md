@@ -1,32 +1,32 @@
 # Proxmox - New installation
 ## Table of contents
-### Installation
+##### Installation
 
-### Enable ZFS data pool storage
+##### Enable ZFS data pool storage
 
-### Copy SSH Keys
+##### Copy SSH Keys
 
-### Configuration de apparmor
+##### Configuration de apparmor
 
-### Backup the VM to NFS Share NAS01
+##### Backup the VM to NFS Share NAS01
 
-### IPMI Interface
+##### IPMI Interface
 
-### Issue with NFS Backup
+##### Issue with NFS Backup
 
-### Config Reverse Proxy Nginx
+##### Config Reverse Proxy Nginx
 
-### VM Windows 10 on Proxmox
+##### VM Windows 10 on Proxmox
 
-### Remove Proxmox Node from web interface
+##### Remove Proxmox Node from web interface
 
-### Add Proxmox ISO to PXE
+##### Add Proxmox ISO to PXE
 
 We have 4 supermicro servers in cluster pxmxadm01 pxmxadm02 pxmxadm03 and pxmxadm04 in clusteradm Each Supermicro have 2 SSD 32GB for system and 2 SSD 2TO for data (VM)
 
 By IPMI or physically boot on USB with Proxmox OS Installer or use pxe for boot on proxmox
 
-**Installation**
+##### **Installation**
 
  - Select Install Proxmox VE
  - Agree
@@ -67,13 +67,13 @@ Copy past Join Information
 Then on each other node Join Cluster
 And That’s It
 
-Enable ZFS data pool storage
+##### Enable ZFS data pool storage
 After created cluster “data” pool is not visible on new node
 go on Datacenter then clic on data
 
 Add new node in the list for exemple pxmx02
 after that we can see the data pool on the new node
-Copy SSH Keys
+##### Copy SSH Keys
 
 copy ssh keys from another nodes to the new node
 
@@ -81,7 +81,7 @@ copy ssh keys from new node to another nodes
 
 copy ssh keys from all sysadmins
 
-Configuration de apparmor
+##### Configuration de apparmor
 Add in the file /etc/apparmor.d/lxc/lxc-default-cgns the two lines :
 
     mount fstype=rpc_pipefs,
@@ -114,7 +114,7 @@ Redémarrer le service apparmor
 
     systemctl restart apparmor
 Usage
-Backup the VM to NFS Share NAS01
+##### Backup the VM to NFS Share NAS01
 
 ![](https://lh3.googleusercontent.com/vtI7Nz42Db9_p9SAPeZBVncijJfPvEVlqkbKM0uswWeVdmhqo6XGCYq7Rkdyw7jyBQruVloUvomDMG2w3hZXnJdRBqjMnYdciM3eipm5MKyp2Yt5a5FpyS1Y9WGMQLbyu6tmvCl63F2fG1LMPW_SeZg)Using NFS for backup is not secure enough. Please refer to this documentation: Proxmox - Backup & Restore
 
@@ -142,7 +142,7 @@ Selection mode : All
 
 leaves the rest and click on Create.
 
-IPMI Interface
+##### IPMI Interface
 
 IPMI allows access to hypervisors via a management interface.
 
@@ -162,7 +162,7 @@ Linux : apt install ipmitool
 
 https://linux.die.net/man/1/ipmitool
 
-Issue with NFS Backup
+##### Issue with NFS Backup
 
 Backup VM with unpriviliged container checked on proxmox system local storage
 
@@ -170,7 +170,7 @@ Restore VM and uncheck unpriviliged container before run restore on ZFS volume
 
 Go on Features and check "NFS"
 
-Config Reverse Proxy Nginx
+##### Config Reverse Proxy Nginx
     
        server {
     
@@ -209,7 +209,7 @@ Config Reverse Proxy Nginx
     }
     
     }
-VM Windows 10 on Proxmox
+##### VM Windows 10 on Proxmox
 
 Preparation
 
@@ -245,7 +245,7 @@ Browse the file explorer, select the virtual cd drive where the VirtIO iso is mo
 
 Ethernet adapter : NetKVM\w8.1\amd64 here right click on the installation information file "netkvm" and select install. Virtual memory balloon driver: Balloon\w8.1\amd64 here right click on the installation information file "balloon" and select install.
 
-Remove Proxmox Node from web interface
+##### Remove Proxmox Node from web interface
 
 Step 1 : Migrate all VMs to another active node
 
@@ -302,6 +302,6 @@ If you want to remove from Proxmox GUI the node previously deleted , you just ne
     root@proxmox-node2:~# mv /etc/pve/nodes/NodeName /root/NodeName
 Src: https://sysadmin-community.com/remove-node-from-cluster-proxmox/
 
-Add Proxmox ISO to PXE
+##### Add Proxmox ISO to PXE
 
 https://github.com/morph027/pve-iso-2-pxe
