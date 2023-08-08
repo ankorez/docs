@@ -17,6 +17,7 @@
   - [Dashkiosk](Linux/Dashkiosk.md)
   - [DebianPXE](Linux/DebianPXE.md)
   - [DNSGithubPages](Linux/GithubPagesDNS.md)
+  - [HowtoMakeWebsite](Linux/HowtoMakeWebsite.md)
   - [NCDU Search](Linux/NCDU.md)
   - [PHP Monitor](Linux/PHPServerMonitor.md)
   - [Proxmox](Linux/Proxmox.md)
