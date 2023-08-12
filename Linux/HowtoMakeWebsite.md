@@ -115,3 +115,11 @@ nginx-cloudflase-realip.conf
         client_max_body_size 5M;
 
         sudo service nginx restart
+
+
+et modifier le fichier /etc/php/8.2/fpm/php.ini
+
+   upload_max_filesize 5M;
+   post_max_size 5M;
+
+   sudo systemctl restart php8.2-fpm
