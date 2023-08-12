@@ -119,7 +119,7 @@ nginx-cloudflase-realip.conf
 
 et modifier le fichier /etc/php/8.2/fpm/php.ini
 
-   upload_max_filesize 5M;
-   post_max_size 5M;
+       upload_max_filesize 5M;
+       post_max_size 5M;
 
-   sudo systemctl restart php8.2-fpm
+       sudo systemctl restart php8.2-fpm
