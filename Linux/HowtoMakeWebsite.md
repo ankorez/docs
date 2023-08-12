@@ -30,29 +30,26 @@ Les liens symboliques permettent d'activer ou de désactiver facilement un site 
 
 Voici la structure de mon **vhost** situé dans /etc/nginx/sites-available/ankorez.fr
 
-
-server {
-    listen 80;
-    server_name ankorez.fr www.ankorez.fr;
-
-    root /var/www/html/EPv2;
-    index index.php index.html index.htm;
-
-    location / {
-        try_files $uri $uri/ /index.php?$query_string;
+    server {
+        listen 80;
+        server_name ankorez.fr www.ankorez.fr;
+    
+        root /var/www/html/EPv2;
+        index index.php index.html index.htm;
+    
+        location / {
+            try_files $uri $uri/ /index.php?$query_string;
+        }
+    
+        location ~ \.php$ {
+            include snippets/fastcgi-php.conf;
+            fastcgi_pass unix:/run/php/php8.2-fpm.sock;
+        }
+    
+        location ~* \.txt$ {
+            deny all;
+        }
     }
-
-    location ~ \.php$ {
-        include snippets/fastcgi-php.conf;
-        fastcgi_pass unix:/run/php/php8.2-fpm.sock;
-    }
-
-    location ~* \.txt$ {
-        deny all;
-    }
-
-}
-
 
 Je sauvegarde le fichier **vhost** sous le nom **ankorez.fr**
 Puis je créer un lien symbolique pour l'activer
