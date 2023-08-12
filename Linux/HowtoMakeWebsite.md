@@ -30,9 +30,10 @@ Les liens symboliques permettent d'activer ou de désactiver facilement un site 
 
 Voici la structure de mon **vhost** situé dans /etc/nginx/sites-available/ankorez.fr
 
+
 server {
     listen 80;
-    server_name exposedpassion.com www.exposedpassion.com;
+    server_name ankorez.fr www.ankorez.fr;
 
     root /var/www/html/EPv2;
     index index.php index.html index.htm;
