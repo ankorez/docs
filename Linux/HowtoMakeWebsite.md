@@ -123,3 +123,7 @@ et modifier le fichier /etc/php/8.2/fpm/php.ini
        post_max_size 5M;
 
        sudo systemctl restart php8.2-fpm
+
+Tester
+
+Si necessaire faire la meme modification dans /etc/php/8.2/cli/php.ini
