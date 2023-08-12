@@ -100,3 +100,18 @@ nginx-cloudflase-realip.conf
 
     real_ip_header CF-Connecting-IP;
     #real_ip_header X-Forwarded-For;
+
+#### change limit size for upload
+
+    sudo nano /etc/nginx/nginx.conf
+
+        ##
+        # Basic Settings
+        ##
+
+        sendfile on;
+        tcp_nopush on;
+        types_hash_max_size 2048;
+        **client_max_body_size 5M;**
+
+        sudo service nginx restart
