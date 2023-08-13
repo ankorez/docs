@@ -16,7 +16,7 @@ Il faut avoir uploader sa clé SSH sur son compte Scaleway, ainsi elle sera ajou
 
     ssh root@ipdeinstance
     sudo apt update
-    sudo apt install php-fpm nginx
+    sudo apt install php-fpm php-gd nginx
 #### Configurer son website
 Par defaut la page nginx s'affiche lorsqu'on se rend sur notre siteweb.
 Les repertoires **sites-available** et **sites-enabled** contiennent ce qu'on appelle des **vhost**
