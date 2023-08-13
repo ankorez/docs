@@ -127,3 +127,10 @@ et modifier le fichier /etc/php/8.2/fpm/php.ini
 Tester
 
 Si necessaire faire la meme modification dans /etc/php/8.2/cli/php.ini
+
+#### crontab 
+       sudo nano /etc/crontab
+
+       * * * * * www-data /usr/bin/php /var/www/html/EPv3/cleanup.php
+
+S'assurer que tous les fichiers ont www-data:www-data en owner (le script PHP et les fichiers utilisés avec)
