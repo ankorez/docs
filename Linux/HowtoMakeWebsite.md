@@ -134,3 +134,52 @@ Si necessaire faire la meme modification dans /etc/php/8.2/cli/php.ini
        * * * * * www-data /usr/bin/php /var/www/html/EPv3/cleanup.php
 
 S'assurer que tous les fichiers ont www-data:www-data en owner (le script PHP et les fichiers utilisés avec)
+
+#### vhost nginx
+
+    server {
+    listen 80;
+    server_name ankorez.fr www.ankorez.fr;
+
+    root /var/www/html/EPv3;
+    index index.php index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location = /cleanup.php {
+        allow 127.0.0.1;
+        deny all;
+
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/run/php/php8.2-fpm.sock;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/run/php/php8.2-fpm.sock;
+    }
+
+    location ~* \.txt$ {
+        deny all;
+    }
+
+    location ~* ^/uploads/.*\.(jpeg|jpg|png|gif)$ {
+	add_header Cache-Control "no-cache";
+    }
+
+    location /route/ {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-NginX-Proxy true;
+        proxy_pass http://127.0.0.1:8051/;
+        proxy_redirect off;
+        if ($cloudflare_ip != 1) {
+            return 403;
+        }
+        include /etc/nginx/conf.d/allow_cloudflare.conf;
+        deny all;
+    }
+}
